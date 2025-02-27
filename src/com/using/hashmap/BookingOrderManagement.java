@@ -3,14 +3,13 @@ import com.using.hashmap.controller.CustomerController;
 import com.using.hashmap.controller.DeliveryAgentController;
 import com.using.hashmap.controller.OrderController;
 import com.using.hashmap.controller.RestaurantController;
+import com.using.hashmap.impl.CustomerImpl;
+import com.using.hashmap.impl.OrderNumberImpl;
 import com.using.hashmap.model.Customer;
 import com.using.hashmap.model.DeliveryAgent;
 import com.using.hashmap.model.Order;
 import com.using.hashmap.model.Restaurant;
-import com.using.hashmap.service.CustomerService;
-import com.using.hashmap.service.DeliveryAgentService;
-import com.using.hashmap.service.OrderService;
-import com.using.hashmap.service.RestaurantService;
+import com.using.hashmap.service.*;
 
 import java.util.Scanner;
 public class BookingOrderManagement {
@@ -58,7 +57,8 @@ public class BookingOrderManagement {
             switch (option) {
                 case 3:
                     OrderController orderController = new OrderController();
-                    OrderService orderService = new OrderService();
+                    OrderService orderService = new CustomerImpl();
+                    OrderNumberService orderNumberService = new OrderNumberImpl();
                     orderController.orderInfo();
                     orderService.createOrder();
                     Order order = new Order();
