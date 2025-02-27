@@ -13,7 +13,7 @@ public class CustomerImpl implements OrderService {
     HashMap<Integer,Order> orders = new HashMap<>();
     Scanner sc = new Scanner(System.in);
 
-    void printCustomer(Order order){
+    public void printCustomer(Order order){
 
         System.out.println(order);
     }

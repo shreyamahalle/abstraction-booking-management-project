@@ -1,8 +1,5 @@
 package com.using.abstraction;
-import com.using.abstraction.controller.CustomerController;
-import com.using.abstraction.controller.DeliveryAgentController;
-import com.using.abstraction.controller.OrderController;
-import com.using.abstraction.controller.RestaurantController;
+import com.using.abstraction.controller.*;
 import com.using.abstraction.impl.CustomerImpl;
 import com.using.abstraction.impl.OrderNumberImpl;
 import com.using.abstraction.model.Customer;
@@ -18,7 +15,6 @@ public class BookingOrderManagement {
 
     public static void main(String[] args) {
 
-
         int option = 0;
         do {
             System.out.println("-----------Booking Management-----------");
@@ -27,6 +23,8 @@ public class BookingOrderManagement {
             System.out.println("2. Create delivery agent");
             System.out.println("3. Create restaurant ");
             System.out.println("4. Create order");
+            System.out.println("5. Display Order Number");
+            System.out.println("6. Combo Pack Offer");
             System.out.println("0. Exit project");
             System.out.println("Select the option..");
             option = Integer.parseInt(sc.nextLine());
@@ -78,6 +76,18 @@ public class BookingOrderManagement {
                     restaurantService.createRestaurant();
                     System.out.println("Restaurant created : " + restaurant);
                     break;
+            }
+            switch (option){
+                case 5:
+                    OrderNumberService orderNumberService = new OrderNumberImpl();
+                    OrderNumberController orderNumberController = new OrderNumberController();
+                    orderNumberController.orderInfo();
+                    orderNumberService.createOrderNo();
+            }
+            switch (option){
+                case 6:
+                    OrderMultipleInheritanceService orderMultipleInheritanceService = new OrderMultipleInheritanceService();
+                    orderMultipleInheritanceService.displayOrder();
             }
         } while (option != 0);
 

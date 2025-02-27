@@ -2,6 +2,7 @@ package com.using.abstraction.controller;
 
 import com.using.abstraction.exception.CustomerException;
 import com.using.abstraction.impl.CustomerImpl;
+import com.using.abstraction.impl.OrderNumberImpl;
 import com.using.abstraction.model.Customer;
 import com.using.abstraction.model.Order;
 import com.using.abstraction.service.OrderNumberService;
@@ -9,9 +10,10 @@ import com.using.abstraction.service.OrderService;
 
 import java.util.Scanner;
 
-public class OrderController {
+public class OrderNumberController {
 
-     OrderService orderService = new CustomerImpl();
+    OrderNumberService orderNumberService = new OrderNumberImpl();
+    OrderService orderService = new CustomerImpl();
     private Customer C = new Customer();
     private Scanner sc = new Scanner(System.in);
 
@@ -19,8 +21,7 @@ public class OrderController {
         int option;
         do{
             System.out.println("\n---- Order ----");
-            System.out.println("1. Add Order");
-            System.out.println("2. View Order Details");
+            System.out.println("1. View Order Details");
             System.out.println("0. Back to Main Menu");
             System.out.print("Enter choice: ");
 
