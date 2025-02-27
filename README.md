@@ -104,8 +104,8 @@ class DeliveryAgent{
  Order : +String address
 
 class Customer{
- +createUser()
- +displayUser()
+ +createCustomer()
+ +displayCustomer()
 }
 
 Restaurant: +int registerNo
@@ -127,6 +127,7 @@ Restaurant --> Customer : Association
 Restaurant --> Order : Association
 Restaurant --> DeliveryAgent : Association
 
+Customer --> DeliveryAgent : Association
 
 
 
