@@ -123,10 +123,6 @@ Customer <-- Order : Association
 DeliveryAgent  <-- Order  : Assocciation
 
 
-Appointment --|> DoctorAppointment : Inheritance
-Appointment --|> GeneralAppointment : Inheritance
-
-
 Restaurant --> Customer : Association
 Restaurant --> Order : Association
 Restaurant --> DeliveryAgent : Association
