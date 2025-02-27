@@ -13,6 +13,7 @@ public class OrderController {
 
     OrderService orderService = new OrderService();
     private Customer C = new Customer();
+    Order order = new Order();
     private Scanner sc = new Scanner(System.in);
 
     public void orderInfo() {
@@ -29,12 +30,11 @@ public class OrderController {
                 switch (option) {
                     case 1:
                         orderService.createOrder();
-                        Order order = new Order();
                         orderService.displayOrder();
                         System.out.print("Order " + order);
                         break;
                     case 2:
-                        orderService.createOrder();
+                        orderService.displayOrder();
                         break;
                     case 0:
                         System.out.println("Returning to Main Menu...");

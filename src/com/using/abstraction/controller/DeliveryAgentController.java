@@ -30,7 +30,7 @@ public class DeliveryAgentController {
                         System.out.println("DeliveryAgent " + deliveryAgent );
                         break;
                     case 2:
-                        deliveryAgentService.createDeliveryAgent();
+                        deliveryAgentService.displayDeliveryAgent();
                         break;
                     case 0:
                         System.out.println("Returning to Main Menu...");

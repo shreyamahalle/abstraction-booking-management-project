@@ -31,14 +31,11 @@ public class BookingOrderManagement {
 
             switch (option) {
                 case 1:
-                    CustomerController customerController = new CustomerController();
-                    CustomerService customerService = new CustomerService();
-                    Customer customer = new Customer();
-                    customerController.data();
-                    customerService.createCustomer();
-                    customerService.displayCustomers();
-                    System.out.println("Customer created : " + customer);
-                    break;
+                      CustomerController customerController = new CustomerController();
+                      customerController.data();
+                      Customer customer = new Customer();
+                      //System.out.println("Customer created : " + customer);
+                      break;
             }
             switch (option) {
                 case 2:
@@ -47,8 +44,6 @@ public class BookingOrderManagement {
                     deliveryAgentService.createDeliveryAgent();
                     deliveryAgentController.deliveryInfo();
                     DeliveryAgent deliveryAgent = new DeliveryAgent();
-                    deliveryAgentService.displayDeliveryAgent();
-                    deliveryAgentService.createDeliveryAgent();
                     System.out.println("DeliveryAgent created : " + deliveryAgent);
                     break;
             }
@@ -60,20 +55,15 @@ public class BookingOrderManagement {
                     orderController.orderInfo();
                     orderService.createOrder();
                     Order order = new Order();
-                    orderService.displayOrder();
-                    orderService.createOrder();
+                    orderNumberService.createOrderNo();
                     System.out.println("Order created : " + order);
                     break;
             }
             switch (option) {
                 case 4:
                     RestaurantController restaurantController = new RestaurantController();
-                    RestaurantService restaurantService = new RestaurantService();
                     restaurantController.restaurantInfo();
-                    restaurantService.createRestaurant();
                     Restaurant restaurant = new Restaurant();
-                    restaurantService.displayRestaurant();
-                    restaurantService.createRestaurant();
                     System.out.println("Restaurant created : " + restaurant);
                     break;
             }
@@ -87,7 +77,6 @@ public class BookingOrderManagement {
                     customerImpl.printCustomer();
                     customerImpl.createOrder();
                     customerImpl.displayOrder();
-
             }
             switch (option){
                 case 6:

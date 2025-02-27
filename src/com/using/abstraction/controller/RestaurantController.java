@@ -12,6 +12,7 @@ public class RestaurantController {
 
     private RestaurantService restaurantService = new RestaurantService();
     private Customer C = new Customer();
+    Restaurant restaurant = new Restaurant();
     private Scanner sc = new Scanner(System.in);
 
     public void restaurantInfo() {
@@ -28,12 +29,11 @@ public class RestaurantController {
                 switch (option) {
                     case 1:
                         RestaurantService.createRestaurant();
-                        Restaurant restaurant = new Restaurant();
                         RestaurantService.displayRestaurant();
                         System.out.print("restaurant " + restaurant);
                         break;
                     case 2:
-                        RestaurantService.createRestaurant();
+                        RestaurantService.displayRestaurant();
                         break;
                     case 0:
                         System.out.println("Returning to Main Menu...");

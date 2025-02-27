@@ -13,7 +13,7 @@ public class CustomerService {
         System.out.println(customer);
     }
 
-    public Customer createCustomer () {
+    public void createCustomer () {
         Customer customer = new Customer();
         customerRepository.createCustomer(customer);
         customerRepository.displayCustomers(customer);
@@ -44,7 +44,6 @@ public class CustomerService {
         }catch (Exception e){
             System.out.println("Invalid input type correct data");
         }
-            return customer;
     }
     public void displayCustomers(){
        try {

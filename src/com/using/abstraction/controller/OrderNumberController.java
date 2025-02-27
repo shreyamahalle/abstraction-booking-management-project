@@ -1,7 +1,5 @@
 package com.using.abstraction.controller;
-
 import com.using.abstraction.exception.CustomerException;
-import com.using.abstraction.impl.CustomerImpl;
 import com.using.abstraction.impl.OrderNumberImpl;
 import com.using.abstraction.model.Customer;
 import com.using.abstraction.model.Order;
@@ -15,6 +13,7 @@ public class OrderNumberController {
     OrderNumberService orderNumberService = new OrderNumberImpl();
     OrderService orderService = new OrderService();
     private Customer C = new Customer();
+    Order order = new Order();
     private Scanner sc = new Scanner(System.in);
 
     public void orderInfo() {
@@ -30,12 +29,11 @@ public class OrderNumberController {
                 switch (option) {
                     case 1:
                         orderService.createOrder();
-                        Order order = new Order();
                         orderService.displayOrder();
                         System.out.print("Order " + order);
                         break;
                     case 2:
-                        orderService.createOrder();
+                        orderService.displayOrder();
                         break;
                     case 0:
                         System.out.println("Returning to Main Menu...");

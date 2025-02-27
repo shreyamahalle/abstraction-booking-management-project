@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class CustomerController {
 
     private CustomerService customerService = new CustomerService();
-    private Customer C = new Customer();
+    Customer customer = new Customer();
     private Scanner sc = new Scanner(System.in);
 
     public void data() {
@@ -24,12 +24,11 @@ public class CustomerController {
                 switch (option) {
                     case 1:
                         customerService.createCustomer();
-                        Customer customer = new Customer();
                         customerService.displayCustomers();
                         System.out.println("Customer created : " + customer);
                         break;
                     case 2:
-                        customerService.createCustomer();
+                        customerService.displayCustomers();
                         break;
                     case 0:
                         System.out.println("Returning to Main Menu...");
