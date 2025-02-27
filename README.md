@@ -62,49 +62,135 @@ The Core Java abstraction-booking-management-project is a basic Java application
 ---
 
 
-##  Class Diagram 
-```mermaid 
+#  Class Diagram
+```mermaid
 ---
-title: booking-management
+title: booking management project
 ---
 classDiagram
-  class Customer {
-        - int id
-        - String name
-        - String city
-        - String mobileNo
-        - int age
-    }
 
-    class DeliveryAgent {
-        - int id
-        - String name
-        - String city
-        - int mobileNo
-        + createDeliveryAgent()
-        + displayDeliveryAgent()
-    }
+ note " food order management "
 
+ class Customer
+ Customer : +int ID
+ Customer : +String name
+ Customer : +String city
+ Customer : +int age
+ Customer : +int contactNo
 
-    class Order {
-        - int id
-        - String type
-        - String Note
-        - String paymentMethod
-        + createOrder()
-        + displayOrder()
-        Order <|--OrderMultipleInheritance
-    }
+class Customer{
+ +createPerson()
+ +displayPerson()
+}
 
-    class Restaurant {
-        - int registerNo
-        - String name
-        - String city
-        - String Area
-        + createRestaurant()
-        + displayRestaurant()
-    }
+  Customer --|> User  : Inheritance
 
+ User : +int personId
+ User : +String firstname
+ User : +String lastName
+ User : +int age
+ User : +String gender
+ User : +Long contactNo
+ User : +Long alternateMobile
+ User : +String address
 
-   
+class User{
+ +createUser()
+ +displayUser()
+}
+
+Doctor: +int doctorId
+Doctor: +String firstName
+Doctor: +String lastName
+Doctor: +int age
+Doctor: +String gender
+Doctor: +String contactNo
+Doctor: +String speciality
+Doctor: +int experience
+
+class Doctor{
+ +createDoctor()
+ +displayDoctor()
+}
+
+Hospital: +int hospitalId
+Hospital: +String hospitalName
+Hospital: +String address
+Hospital: +Long contactNo
+Hospital: +String emailId
+
+class Hospital{
++createHospital()
++displayHospital()
+}
+
+Department: +int deptId
+Department: +String deptName
+Department: +doctorId
+Department: +hosptitalId
+
+class Department{
++createDepartment()
++displayDepartment()
+}
+
+Hospital <-- Department : Association
+Doctor  <-- Department  : Assocciation
+
+Appointment: +int appointmentId
+Appointment: +int personId
+Appointment: +int doctorId
+Appointment: +int hospitalId
+Appointment: +int deptId
+
+class Appointment{
++createAppointment()
++displayAppointment()
++doctorAppointment()
++generalAppointment()
+}
+
+Appointment --|> DoctorAppointment : Inheritance
+Appointment --|> GeneralAppointment : Inheritance
+
+class DoctorAppointment{
++doctorAppointment()
+}
+
+class GeneralAppointment{
++generalAppointment()
+}
+
+DoctorAppointment : +String speciality
+
+GeneralAppointment : reasonOfAppointment
+
+Appointment --> Person : Association
+Appointment --> Doctor : Association
+Appointment --> Hospital : Association
+Appointment --> Department : Association
+
+Prescription : +int prescriptionId
+Prescription : +String prescriptionDetails
+Prescription : +int personId
+
+class Prescription{
++createPrescription()
++displayPrescription()
+}
+
+Prescription --> Person : Association
+
+Billing : +int billId
+Billing : +int bill
+Billing : +int totalBill
+Billing : +int personId
+
+class Billing{
++createBilling()
++displayBilling()
+}
+
+Billing --> Person : Association
+
 ```
