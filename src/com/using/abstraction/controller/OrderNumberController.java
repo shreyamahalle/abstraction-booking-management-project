@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class OrderNumberController {
 
     OrderNumberService orderNumberService = new OrderNumberImpl();
-    OrderService orderService = new CustomerImpl();
+    OrderService orderService = new OrderService();
     private Customer C = new Customer();
     private Scanner sc = new Scanner(System.in);
 
