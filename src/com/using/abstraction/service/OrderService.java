@@ -1,27 +1,22 @@
 package com.using.abstraction.service;
 import com.using.abstraction.model.Order;
 import com.using.abstraction.repository.OrderRepository;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-public interface OrderService {
-//    public void createOrder();
-//
-//    public void displayOrder();
-
+public class OrderService {
 
     OrderRepository orderRepository = new OrderRepository();
     HashMap<Integer,Order> orders = new HashMap<>();
     Scanner sc = new Scanner(System.in);
 
-    default void printCustomer(Order order){
+    void printCustomer(Order order){
 
         System.out.println(order);
     }
-    public default Order createOrder(){
+    public Order createOrder(){
         Order order = new Order();
         orderRepository.createOrder(order);
         orderRepository.displayOrder(order);
@@ -50,7 +45,7 @@ public interface OrderService {
         }
         return order;
     }
-    public default void displayOrder(){
+      public void displayOrder(){
         try {
             Set<Map.Entry<Integer, Order>> entrySet = orders.entrySet();
             for (Map.Entry<Integer, Order> customerEntry : entrySet) {

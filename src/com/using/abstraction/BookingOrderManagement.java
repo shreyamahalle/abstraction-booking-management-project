@@ -55,7 +55,7 @@ public class BookingOrderManagement {
             switch (option) {
                 case 3:
                     OrderController orderController = new OrderController();
-                    OrderService orderService = new CustomerImpl();
+                    OrderService orderService = new OrderService();
                     OrderNumberService orderNumberService = new OrderNumberImpl();
                     orderController.orderInfo();
                     orderService.createOrder();

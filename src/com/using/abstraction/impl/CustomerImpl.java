@@ -1,13 +1,14 @@
 package com.using.abstraction.impl;
 import com.using.abstraction.model.Order;
 import com.using.abstraction.repository.OrderRepository;
+import com.using.abstraction.service.OrderNumberService;
 import com.using.abstraction.service.OrderService;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-public class CustomerImpl implements OrderService {
+public class CustomerImpl implements OrderNumberService {
 
     OrderRepository orderRepository = new OrderRepository();
     HashMap<Integer,Order> orders = new HashMap<>();
@@ -56,5 +57,10 @@ public class CustomerImpl implements OrderService {
         }catch (Exception e){
             System.out.println("Invalid input type correct data");
         }
+    }
+
+    @Override
+    public void createOrderNo() {
+
     }
 }
