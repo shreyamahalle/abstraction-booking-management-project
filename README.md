@@ -79,8 +79,19 @@ classDiagram
  Customer : +int contactNo
 
 class Customer{
- +createPerson()
- +displayPerson()
+ +createCustomer()
+ +displayCustomer()
+}
+
+class DeliveryAgent
+DeliveryAgent : +int id
+DeliveryAgent : +String name
+DeliveryAgent : +String city
+DeliveryAgent : +mobileNo
+
+class DeliveryAgent{
++createDeliveryAgent()
++displayDeliveryAgent()
 }
 
   Customer --|> User  : Inheritance
@@ -94,7 +105,7 @@ class Customer{
  User : +Long alternateMobile
  User : +String address
 
-class User{
+class Customer{
  +createUser()
  +displayUser()
 }
