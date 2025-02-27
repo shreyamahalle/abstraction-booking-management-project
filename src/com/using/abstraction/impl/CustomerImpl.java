@@ -2,21 +2,23 @@ package com.using.abstraction.impl;
 import com.using.abstraction.model.Order;
 import com.using.abstraction.repository.OrderRepository;
 import com.using.abstraction.service.OrderNumberService;
-import com.using.abstraction.service.OrderService;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
 public class CustomerImpl implements OrderNumberService {
+    @Override
+    public void createOrderNo() {
 
+    }
     OrderRepository orderRepository = new OrderRepository();
     HashMap<Integer,Order> orders = new HashMap<>();
     Scanner sc = new Scanner(System.in);
 
-    public void printCustomer(Order order){
+    public void printCustomer(){
 
-        System.out.println(order);
+        //System.out.println(order);
     }
     public Order createOrder(){
         Order order = new Order();
@@ -59,8 +61,4 @@ public class CustomerImpl implements OrderNumberService {
         }
     }
 
-    @Override
-    public void createOrderNo() {
-
-    }
 }

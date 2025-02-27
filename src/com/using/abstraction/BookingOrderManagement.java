@@ -80,9 +80,14 @@ public class BookingOrderManagement {
             switch (option){
                 case 5:
                     OrderNumberService orderNumberService = new OrderNumberImpl();
+                    CustomerImpl customerImpl = new CustomerImpl();
                     OrderNumberController orderNumberController = new OrderNumberController();
                     orderNumberController.orderInfo();
                     orderNumberService.createOrderNo();
+                    customerImpl.printCustomer();
+                    customerImpl.createOrder();
+                    customerImpl.displayOrder();
+
             }
             switch (option){
                 case 6:

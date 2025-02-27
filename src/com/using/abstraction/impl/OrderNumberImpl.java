@@ -7,6 +7,5 @@ public class OrderNumberImpl implements OrderNumberService {
     @Override
     public void createOrderNo() {
         AtomicInteger orderNumberCounter = new AtomicInteger(100);
-
     }
 }
