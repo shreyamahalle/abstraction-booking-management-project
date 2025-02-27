@@ -95,7 +95,10 @@ class DeliveryAgent{
 }
 
   Customer --|> Order  : Inheritance
-
+class Order{
+ +createOrder()
+ +displayOrder()
+}
  Order : +int Id
  Order : +String name
  Order : +String lastName
