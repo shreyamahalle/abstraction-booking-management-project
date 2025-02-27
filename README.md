@@ -103,9 +103,9 @@ class DeliveryAgent{
  Order : +int contactNo
  Order : +String address
 
-class Customer{
- +createCustomer()
- +displayCustomer()
+class Order{
+ +createOrder()
+ +displayOrder()
 }
 
 Restaurant: +int registerNo
